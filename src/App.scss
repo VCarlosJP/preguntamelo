@@ -3,3 +3,38 @@ $base-color: #eeeeee;
 body {
   background: $base-color;
 }
+
+.container{
+  background-color: $base-color;
+  display: flex;
+  justify-content: center;
+}
+
+.container div{
+  width: 100%;
+  height: 100%;
+}
+.login-form-page{
+  background-color: white;
+}
+.login-form-logo{
+  height: 35px;
+  width: 35px;
+}
+.login-form-header{
+  display: flex;
+  align-items: center;
+  align-content: flex-start;
+  margin-bottom: 10%;
+}
+
+.login-form-header div{
+  width: 10%;
+ }
+.login-form-text{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+}
+
