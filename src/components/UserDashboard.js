@@ -11,7 +11,16 @@ export default class UserDashboard extends React.Component {
 
         <div className="ask-question-box">
           <h1 className="ask-question-title">How can we help you?</h1>
-          <input className="search-box" placeholder="Ask a question..."></input>
+        </div>
+
+        <div className="ask-question-search-bar-main-container">
+          <div className="ask-question-search-bar-container">
+            <input
+              className="search-box"
+              placeholder="Ask a question...">
+              </input>
+            <button className="ask-question-button">Ask Button</button>
+          </div>
         </div>
       </div>
     );
