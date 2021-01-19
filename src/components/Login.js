@@ -1,5 +1,7 @@
 import React from "react";
 import LoginForm from "./LoginForm";
+import './styles/login.scss'
+
 
 export default class Login extends React.Component {
   render() {

@@ -1,6 +1,6 @@
 import React from 'react';
 import logo from "../logo.svg";
-
+import './styles/login.scss'
 
 
 export default class LoginForm extends React.Component{
