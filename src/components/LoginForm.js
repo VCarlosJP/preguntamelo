@@ -33,19 +33,20 @@ export default class LoginForm extends React.Component{
                 <div className="login-form-text">
                     <div className="info-text">Login into your account</div>
                     <div className="info-text">Let's access to your dashboard</div>
-                </div>
-                <div className="login-form-section">
-                    <span>
+                    <hr style={{width:"100%"}}/>
+                    <div className="login-form-section">
+                    <span style={{fontWeight:"bold"}}>
                         Email
                     </span>
                     <input placeholder="Email or Phone number"></input>
-                    <span>
+                    <span style={{fontWeight:"bold"}}>
                         Password
                     </span>
                     <input placeholder="Password"></input>
 
-                    <a>Reset password</a>
+                    <a style={{marginLeft:'10px', color:'rgb(191, 96, 29)', fontWeight:'bold'}}>Reset password</a>
                     <button className="sign-in-button" onClick={this.singIn}>Sing in</button>
+                </div>
                 </div>
                 <div style={{display:'flex', alignItems:'center'}}>
                     <p>Dont have an account yet?</p>
