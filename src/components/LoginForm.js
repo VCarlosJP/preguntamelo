@@ -14,12 +14,13 @@ export default class LoginForm extends React.Component{
     singIn(){
         console.log("logeandose");
     }
+    
     register(){
-        console.log(this.props);
-        //this.props.history.push("/signup");
+        window.location.href="signup/";
     }
 
     render(){
+        
         return(
             <div className="login-form-page">
                 <div className="login-form-header">
@@ -33,7 +34,7 @@ export default class LoginForm extends React.Component{
                 <div className="login-form-text">
                     <div className="info-text">Login into your account</div>
                     <div className="info-text">Let's access to your dashboard</div>
-                    <hr style={{width:"100%"}}/>
+                    <hr style={{width:"75%"}}/>
                     <div className="login-form-section">
                     <span style={{fontWeight:"bold"}}>
                         Email
