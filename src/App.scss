@@ -5,6 +5,12 @@ body {
   background: $base-color;
 }
 
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
 button,
 input {
   border: 0;
@@ -149,4 +155,20 @@ input {
   letter-spacing: 0px;
   color: #575757;
   opacity: 1;
+}
+
+.questions-main-container {
+  display: flex;
+  justify-content: center;
+}
+
+.questions-main {
+  background: #ffffff 0% 0% no-repeat padding-box;
+  border: 1px solid #707070;
+  border-radius: 10px 10px 0px 0px;
+  opacity: 0.5;
+  width: 50%;
+  position: absolute;
+  top: 47%;
+  bottom: 0;
 }

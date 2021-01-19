@@ -31,6 +31,10 @@ export default class UserDashboard extends React.Component {
             </button>
           </div>
         </div>
+
+        <div className="questions-main-container">
+          <div className="questions-main"></div>
+        </div>
       </div>
     );
   }
