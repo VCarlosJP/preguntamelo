@@ -1,5 +1,7 @@
 import React from "react";
 
+import "./styles/UserDashboard.scss";
+
 export default class UserDashboard extends React.Component {
   render() {
     return (
