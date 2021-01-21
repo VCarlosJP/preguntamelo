@@ -7,12 +7,45 @@ export default class LoginForm extends React.Component{
     
     constructor(props){
         super(props);
+
+        this.state = {email:"",pass:""};
+
         this.singIn = this.singIn.bind(this);
         this.register = this.register.bind(this);
+        this.handleEmailChange = this.handleEmailChange.bind(this);
+        this.handlePassChange = this.handlePassChange.bind(this);
+    }
+
+    handleEmailChange(event){
+        this.setState({email:event.target.value});
+    }
+    handlePassChange(event){
+        this.setState({pass:event.target.value});
     }
 
     singIn(){
         console.log("logeandose");
+        fetch('http://127.0.0.1:8000/login',{
+            method:'POST',
+            headers:{
+                'Content-Type':"application/json"
+            },
+            body:JSON.stringify({email:this.state.email, pass:this.state.pass})
+        })
+        .then(function(response){
+            return response.json();
+        })
+        .then(function(data){
+            console.log(data);
+            if(data.error==0||data.error=='0'){
+                alert(data.message);
+            }else{
+                alert(data.message);
+            }
+        })
+        .catch(function(err){
+            console.log(err)
+        });
     }
     
     register(){
@@ -39,11 +72,11 @@ export default class LoginForm extends React.Component{
                     <span style={{fontWeight:"bold"}}>
                         Email
                     </span>
-                    <input placeholder="Email or Phone number"></input>
+                    <input placeholder="Email or Phone number" onChange={this.handleEmailChange}></input>
                     <span style={{fontWeight:"bold"}}>
                         Password
                     </span>
-                    <input placeholder="Password"></input>
+                    <input placeholder="Password" type="password" onChange={this.handlePassChange}></input>
 
                     <a style={{marginLeft:'10px', color:'rgb(191, 96, 29)', fontWeight:'bold'}}>Reset password</a>
                     <button className="sign-in-button" onClick={this.singIn}>Sing in</button>
