@@ -4,6 +4,54 @@ import "./styles/HomeBody.scss";
 export default class HomeBody extends React.Component{
     constructor(props){
         super(props);
+
+        this.state = {
+            ultimasPreguntas:null,
+            categorias:null
+        };
+    }
+
+    componentWillMount(){
+        this.getUltimasPreguntas();
+        this.getCategorias();
+    }
+
+    getUltimasPreguntas(){
+        console.log("Getting ultimas preguntas");
+        /*fetch('http://127.0.0.1:8000/ultimas_preguntas',{
+            method:"GET"
+        })
+        .then((response)=>{
+            return response.json();
+        })
+        .then((data)=>{
+            console.log(data);
+            this.setState({
+                ultimasPreguntas:data
+            });
+        })
+        .catch((error)=>{
+            console.log(error);
+        })*/
+    }
+
+    getCategorias(){
+        console.log("Getting categorias");
+        /*fetch('http://127.0.0.1:8000/categorias',{
+            method:"GET"
+        })
+        .then((response)=>{
+            return response.json();
+        })
+        .then((data)=>{
+            console.log(data);
+            this.setState({
+                categoria:data
+            });
+        })
+        .catch((error)=>{
+            console.log(error);
+        })*/
     }
 
     render(){
@@ -34,8 +82,8 @@ export default class HomeBody extends React.Component{
 
                 <div className="ultimas-preguntas">
                     {
-                        preguntasMock.map((pregunta)=>{
-                            return (<li>{pregunta.pregunta}</li>)
+                        preguntasMock.map((pregunta,id)=>{
+                            return (<li key={id}>{pregunta.pregunta}</li>)
                         })
                     }
                 </div>
@@ -43,8 +91,8 @@ export default class HomeBody extends React.Component{
                 <div className="nuestras-categorias">
                     <p>Nuestras categorias</p>
                     {
-                        categoriasMock.map((categoria)=>{
-                            return(<li>{categoria.nombre}</li>)
+                        categoriasMock.map((categoria,id)=>{
+                            return(<li key={id}>{categoria.nombre}</li>)
                         })
                     }
                 </div>
