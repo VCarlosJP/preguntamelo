@@ -5,19 +5,59 @@ import "./styles/UserDashboard.scss";
 // export default class UserDashboard extends React.Component {
 class UserDashboard extends React.Component {
   state = {
-    questionButton: true,
+    questionMode: true,
+    isFetchingQuestions: true,
+    userQuestions: [],
+    publicQuestions: [],
   };
 
+  componentDidMount() {
+    this.getQuestions("posts", "userQuestions");
+  }
+
   showUserQuestions = () => {
-    this.setState({ questionButton: true });
+    this.setState({ questionMode: true });
+    this.getQuestions("posts", "userQuestions");
   };
 
   showPublicQuestions = () => {
-    this.setState({ questionButton: false });
+    this.setState({ questionMode: false });
+    this.getQuestions("posts", "publicQuestions");
+  };
+
+  getQuestions = (entity, stateProperty) => {
+    fetch(`http://localhost:3000/${entity}`)
+      .then((response) => response.json())
+      .then((data) => this.setState({ [stateProperty]: data }))
+      .catch((err) => console.log("Couldn´t resolve"));
+  };
+
+  renderQuestions = (questions) => {
+    if (questions.length == 0) return <a>Nothing to show here...</a>;
+    else {
+      return questions.map((question, index) => (
+        <div className="question-element">
+          <a href="" className="question-title">
+            {question.question}
+          </a>
+          <br></br>
+          <div style={{ "margin-top": "5px" }}>
+            <a className="question-status">{question.status}</a>
+            <a className="question-date">Asked {question.date} ago</a>
+          </div>
+          <hr></hr>
+        </div>
+      ));
+    }
   };
 
   render() {
-    let { questionButton } = this.state;
+    let {
+      questionMode,
+      userQuestions,
+      publicQuestions,
+      isFetchingQuestions,
+    } = this.state;
     return (
       <div>
         <div className="header">
@@ -44,14 +84,14 @@ class UserDashboard extends React.Component {
             <button
               onClick={this.showUserQuestions}
               className="my-questions-mode-button"
-              style={{ background: questionButton ? "#eeeeee" : "#ffffff" }}
+              style={{ background: questionMode ? "#eeeeee" : "#ffffff" }}
             >
               My Questions
             </button>
             <button
               onClick={this.showPublicQuestions}
               className="public-questions-mode-button"
-              style={{ background: questionButton ? "#ffffff" : "#eeeeee" }}
+              style={{ background: questionMode ? "#ffffff" : "#eeeeee" }}
             >
               Public Questions
             </button>
@@ -60,16 +100,9 @@ class UserDashboard extends React.Component {
 
         <div className="questions-main-container">
           <div className="questions-main">
-            <div className="question-element">
-              <a href="" className="question-title">
-                When I spot a possible improvement while reviewing, can I
-                suggest to join the paper as a co-author?
-              </a>
-              <br></br>
-              <a className="question-date">Asked 2 days ago</a>
-              <a className="question-status">Sent</a>
-              <hr></hr>
-            </div>
+            {questionMode
+              ? this.renderQuestions(userQuestions)
+              : this.renderQuestions(publicQuestions)}
           </div>
         </div>
       </div>
