@@ -1,0 +1,93 @@
+@import "./src/scss/_variables.scss";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+button {
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+
+@mixin split-container($width) {
+  height: 100%;
+  width: $width;
+  position: fixed;
+  overflow-x: hidden;
+}
+
+.left-container {
+  @include split-container(40%);
+  h1 {
+    padding: 0;
+    margin: 0;
+  }
+  left: 0;
+  background: #fd6f4f;
+  text-align: left;
+  font: normal normal bold 38px Arial;
+  letter-spacing: 0px;
+  color: #ffffff;
+  border-right: 1px solid rgb(131, 131, 131);
+}
+
+.right-container {
+  @include split-container(60%);
+  background: #ffffff;
+  right: 0;
+}
+
+.form-container {
+  margin: 100px;
+  hr {
+    border: 0;
+    height: 1px;
+    background: rgb(201, 201, 201);
+  }
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="number"] {
+    width: 80%;
+    margin-top: 10px;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+  }
+  a {
+    color: #fd6f4f;
+    text-decoration: none;
+  }
+}
+
+.form-block {
+  display: flex;
+  margin-top: 20px;
+  label {
+    font: normal normal bold 15px Arial;
+    margin-bottom: 100px;
+  }
+  div {
+    flex-grow: 1;
+  }
+}
+
+.create-account-button {
+  background: #fd6f4f;
+  border-radius: 0.25rem;
+  font: normal normal normal 15px Arial;
+  padding: 8px 15px;
+  color: #fff;
+}
+.create-account-button:hover {
+  cursor: pointer;
+  background: darken(#fd6f4f, 5);
+}
