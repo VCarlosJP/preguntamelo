@@ -7,8 +7,11 @@ export default class Login extends React.Component {
   render() {
     return (
       <div className="container">
-        <div className="login login-info">
-          <img style={{width:"100%", height:"100%"}}src="https://www.andalucialab.org/wp-content/uploads/2020/02/INSERTAR_LOGO2.jpg"></img>
+        <div className="left-container">
+          <div style={{ margin: "100px 25px" }}>
+            <h1>Ask to an Expert</h1>
+            <h1>we got you</h1>
+          </div>
         </div>
         <div className="login login-form">
           <LoginForm/>
