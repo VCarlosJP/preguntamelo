@@ -72,19 +72,19 @@ export default class LoginForm extends React.Component{
                     <span style={{fontWeight:"bold"}}>
                         Email
                     </span>
-                    <input placeholder="Email or Phone number" onChange={this.handleEmailChange}></input>
+                    <input placeholder="Email or Phone number" type="text" onChange={this.handleEmailChange}></input>
                     <span style={{fontWeight:"bold"}}>
                         Password
                     </span>
                     <input placeholder="Password" type="password" onChange={this.handlePassChange}></input>
 
-                    <a style={{marginLeft:'10px', color:'rgb(191, 96, 29)', fontWeight:'bold'}}>Reset password</a>
+                    <a>Reset password</a>
                     <button className="sign-in-button" onClick={this.singIn}>Sing in</button>
                 </div>
                 </div>
                 <div style={{display:'flex', alignItems:'center'}}>
                     <p>Dont have an account yet?</p>
-                    <a style={{marginLeft:'10px', color:'rgb(191, 96, 29)', fontWeight:'bold'}} onClick={this.register}>Join our community</a>
+                    <a onClick={this.register}>Join our community</a>
                 </div>
             </div>
         )

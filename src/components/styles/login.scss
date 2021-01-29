@@ -60,15 +60,18 @@
   }
   .sign-in-button{
     color: white;
-    background-color: rgb(191, 96, 29);
+    background-color:#fd6f4f;
     border: none;
-    border-radius: 20px;
-    height: 25px;
-    width: 50%;
+    border-radius: 0.25rem;
+    font: normal normal normal 15px Arial;
+    padding: 8px 15px;
+    color: #fff;
+    width: 20rem;
   }
   
   .sign-in-button:hover{
-    background-color: rgb(77, 73, 70);
+    cursor: pointer;
+    background: darken(#fd6f4f, 5);
   }
   
   input{
@@ -76,4 +79,33 @@
     height: 20px;
     border: 1px solid #ccc;
   
+  }
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="number"] {
+    width: 80%;
+    margin-top: 10px;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    a {
+      color: #fd6f4f;
+      text-decoration: none;
+    }
+  }
+  a{
+    color: #fd6f4f;
+    font-weight:'bold';
+    margin-left:'10px'
+  }
+
+  a:hover{
+    cursor: pointer;
   }
