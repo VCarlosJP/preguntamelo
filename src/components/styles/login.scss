@@ -1,4 +1,4 @@
-@import "./src/scss/_variables.scss";
+@import "../../scss/variables";
 
 .container{
     display: flex;
@@ -25,6 +25,7 @@
   .login-form-page{
     background-color: white;
     height: 100vh;
+    padding-left: 10rem;
   }
   .login-form-logo{
     height: 35px;
@@ -112,7 +113,6 @@
     cursor: pointer;
   }
   .left-container {
-    @include split-container(40%);
     h1 {
       padding: 0;
       margin: 0;
