@@ -28,16 +28,17 @@ class SignUp extends React.Component {
 
   postUser = (valuesToPost) => {
     fetch(`${process.env.REACT_APP_SERVER_URL}/api/createUser`, {
-      method: "POST",
-      mode: "cors",
+      method: 'POST',
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(valuesToPost),
     })
-      .then((response) => console.log(response))
+      .then((response) => response.json())
       .catch((error) => console.log(error));
   };
+
+  // JSON.stringify(valuesToPost)
 
   handleSubmit = (e) => {
     e.preventDefault();
