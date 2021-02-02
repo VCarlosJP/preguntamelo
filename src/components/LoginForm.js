@@ -24,32 +24,37 @@ export default class LoginForm extends React.Component{
     }
 
     singIn(){
-        console.log("logeandose");
-        fetch('http://127.0.0.1:8000/login',{
-            method:'POST',
-            headers:{
-                'Content-Type':"application/json"
-            },
-            body:JSON.stringify({email:this.state.email, pass:this.state.pass})
-        })
-        .then(function(response){
-            return response.json();
-        })
-        .then(function(data){
-            console.log(data);
-            if(data.error==0||data.error=='0'){
-                alert(data.message);
-            }else{
-                alert(data.message);
-            }
-        })
-        .catch(function(err){
-            console.log(err)
-        });
+        if(this.state.email===""||this.state.pass===""){
+            alert("Hace falta rellenar campos");
+        }else{
+            console.log("logeandose");
+            fetch('http://127.0.0.1:8000/login',{
+                method:'POST',
+                headers:{
+                    'Content-Type':"application/json"
+                },
+                body:JSON.stringify({email:this.state.email, pass:this.state.pass})
+            })
+            .then(function(response){
+                return response.json();
+            })
+            .then(function(data){
+                console.log(data);
+                if(data.error==0||data.error=='0'){
+                    alert(data.message);
+                }else{
+                    alert(data.message);
+                }
+            })
+            .catch(function(err){
+                console.log(err)
+            });
+        }
+        
     }
     
     register(){
-        window.location.href="signup/";
+        window.location.href="/signup/";
     }
 
     render(){
