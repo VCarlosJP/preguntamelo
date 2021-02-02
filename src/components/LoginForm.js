@@ -59,7 +59,28 @@ export default class LoginForm extends React.Component{
                 <div className="login-form-header">
                     <img className="login-form-logo" src={logo} alt="Logo de preguntamelo"></img>
                     <p style={{alignSelf:"center"}}>Preguntamelo</p>
+                </div>
+                <div className="login-form-text">
+                    <div className="info-text">Login into your account</div>
+                    <div className="info-text">Let's access to your dashboard</div>
+                    <hr style={{width:"75%"}}/>
+                    <div className="login-form-section">
+                        <span style={{fontWeight:"bold"}}>
+                            Email
+                        </span>
+                        <input placeholder="Email or Phone number" type="text" onChange={this.handleEmailChange}></input>
+                        <span style={{fontWeight:"bold"}}>
+                            Password
+                        </span>
+                        <input placeholder="Password" type="password" onChange={this.handlePassChange}></input>
 
+                        <a href={{}}>Reset password</a>
+                        <button className="sign-in-button" onClick={this.singIn}>Sing in</button>
+                    </div>
+                </div>
+                <div style={{display:'flex', alignItems:'center',marginLeft:"5%"}}>
+                    <p>Dont have an account yet?</p>
+                    <a onClick={this.register} href={{}}>Join our community</a>
                 </div>
                 {/**
             <div className="login-form-page">
