@@ -55,6 +55,13 @@ export default class LoginForm extends React.Component{
     render(){
         
         return(
+            <div className="login-form-container">
+                <div className="login-form-header">
+                    <img className="login-form-logo" src={logo} alt="Logo de preguntamelo"></img>
+                    <p style={{alignSelf:"center"}}>Preguntamelo</p>
+
+                </div>
+                {/**
             <div className="login-form-page">
                 <div className="login-form-header">
                     <div>
@@ -78,15 +85,17 @@ export default class LoginForm extends React.Component{
                     </span>
                     <input placeholder="Password" type="password" onChange={this.handlePassChange}></input>
 
-                    <a>Reset password</a>
+                    <a href={{}}>Reset password</a>
                     <button className="sign-in-button" onClick={this.singIn}>Sing in</button>
                 </div>
                 </div>
-                <div style={{display:'flex', alignItems:'center'}}>
+                <div style={{display:'flex', alignItems:'center',marginLeft:"5rem"}}>
                     <p>Dont have an account yet?</p>
-                    <a onClick={this.register}>Join our community</a>
+                    <a onClick={this.register} href={{}}>Join our community</a>
                 </div>
+            </div> */}
             </div>
+            
         )
     }
 }

@@ -1,15 +1,20 @@
 @import "../../scss/variables";
 
-.container{
+  /*.container{
     display: flex;
     align-content: stretch;
+    height: 100vh;
   }
-  /*div{
+  .right-container{
+    background-color: blue;
+    margin-bottom: auto;
+  }
+  div{
     height: 200px;
     width: 100%;
     float: left;
-  }*/
-  
+  }
+  */
   .login-info{
     float: left;
     width: 100%;
@@ -25,7 +30,6 @@
   .login-form-page{
     background-color: white;
     height: 100vh;
-    padding-left: 10rem;
   }
   .login-form-logo{
     height: 35px;
@@ -33,9 +37,8 @@
   }
   .login-form-header{
     display: flex;
-    align-items: center;
-    align-content: flex-start;
-    margin-bottom: 10%;
+    margin-bottom: 2rem;
+    flex-direction: row;
   }
   
   .login-form-header div{
@@ -49,11 +52,12 @@
   }
   
   .login-form-section{
-    margin-top: 5%;  
+    margin-top: 5rem;  
     display: flex;
     flex-direction: column;
     width: 100%;
     align-items: flex-start;
+    margin-left: 10rem;
   }
   .login-form-section input{
     width: 50%;
@@ -112,16 +116,42 @@
   a:hover{
     cursor: pointer;
   }
-  .left-container {
-    h1 {
-      padding: 0;
-      margin: 0;
-    }
-    left: 0;
-    background: #fd6f4f;
-    text-align: left;
-    font: normal normal bold 38px Arial;
-    letter-spacing: 0px;
-    color: #ffffff;
-    border-right: 1px solid rgb(131, 131, 131);
+  
+.container{
+  display: flex;
+  height: 100vh;
+}
+.left-container{
+  h1 {
+    padding: 0;
+    margin: 0;
   }
+  left: 0;
+  background: #fd6f4f;
+  text-align: left;
+  font: normal normal bold 38px Arial;
+  letter-spacing: 0px;
+  color: #ffffff;
+  border-right: 1px solid rgb(131, 131, 131);
+  width: 100rem;
+}
+.right-container{
+  width: 100rem;
+  overflow-x: hidden;
+}
+
+@media only screen and (max-width:900px){
+  .container{
+    flex-direction: column;
+    height: 100vh;
+  }
+  
+  .right-container{
+    height: 100vh;
+  }
+}
+
+.login-form-container{
+  display: flex;
+  flex-direction: column;
+}

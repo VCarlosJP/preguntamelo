@@ -13,7 +13,7 @@ export default class Login extends React.Component {
             <h1>we got you</h1>
           </div>
         </div>
-        <div className="login login-form">
+        <div className="login login-form right-container">
           <LoginForm/>
         </div>
       </div>
