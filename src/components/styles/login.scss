@@ -1,13 +1,20 @@
-.container{
+@import "../../scss/variables";
+
+  /*.container{
     display: flex;
     align-content: stretch;
+    height: 100vh;
   }
-  /*div{
+  .right-container{
+    background-color: blue;
+    margin-bottom: auto;
+  }
+  div{
     height: 200px;
     width: 100%;
     float: left;
-  }*/
-  
+  }
+  */
   .login-info{
     float: left;
     width: 100%;
@@ -30,9 +37,8 @@
   }
   .login-form-header{
     display: flex;
-    align-items: center;
-    align-content: flex-start;
-    margin-bottom: 10%;
+    margin-bottom: 2rem;
+    flex-direction: row;
   }
   
   .login-form-header div{
@@ -46,11 +52,12 @@
   }
   
   .login-form-section{
-    margin-top: 5%;  
+    margin-top: 5rem;  
     display: flex;
     flex-direction: column;
     width: 100%;
     align-items: flex-start;
+    margin-left: 3rem;
   }
   .login-form-section input{
     width: 50%;
@@ -60,15 +67,18 @@
   }
   .sign-in-button{
     color: white;
-    background-color: rgb(191, 96, 29);
+    background-color:#fd6f4f;
     border: none;
-    border-radius: 20px;
-    height: 25px;
+    border-radius: 0.25rem;
+    font: normal normal normal 15px Arial;
+    padding: 8px 15px;
+    color: #fff;
     width: 50%;
   }
   
   .sign-in-button:hover{
-    background-color: rgb(77, 73, 70);
+    cursor: pointer;
+    background: darken(#fd6f4f, 5);
   }
   
   input{
@@ -77,3 +87,75 @@
     border: 1px solid #ccc;
   
   }
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="number"] {
+    width: 80%;
+    margin-top: 10px;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    a {
+      color: #fd6f4f;
+      text-decoration: none;
+    }
+  }
+  a{
+    color: #fd6f4f;
+    font-weight:'bold';
+    margin-left:'10px'
+  }
+
+  a:hover{
+    cursor: pointer;
+  }
+  
+.container{
+  display: flex;
+  height: 100vh;
+}
+.left-container{
+  h1 {
+    padding: 0;
+    margin: 0;
+  }
+  left: 0;
+  background: #fd6f4f;
+  text-align: left;
+  font: normal normal bold 38px Arial;
+  letter-spacing: 0px;
+  color: #ffffff;
+  border-right: 1px solid rgb(131, 131, 131);
+  width: 100%;
+}
+.right-container{
+  width: 100rem;
+  overflow-x: hidden;
+}
+
+@media only screen and (max-width:900px){
+  .container{
+    flex-direction: column;
+    height: 100%;
+  }
+  
+  .right-container{
+    height: 100vh;
+    width: 100%;
+  }
+ 
+}
+
+.login-form-container{
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  height: 100vh;
+}
