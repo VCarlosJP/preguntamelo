@@ -1,0 +1,36 @@
+.home-nav-bar{
+    display: flex;
+   // flex-direction: row;
+   align-items: center;
+   background-color: #eeeeee;
+}
+
+.home-nav-bar-logo{
+    align-self: flex-start;
+}
+
+.home-nav-bar-buttons{
+    display: flex;
+    align-self: flex-start;
+    flex-direction: row;
+    margin-right:20px;
+}
+
+.home-btn{
+    margin: 10px;
+    margin-bottom: 0px;
+    border: none;
+    color:rgb(38, 75, 115);
+    height: 30px;
+    border-radius: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.signup{
+    text-align: center;
+    width: max-content;
+}
+.login{
+    background-color: rgb(197, 216, 237);
+}
