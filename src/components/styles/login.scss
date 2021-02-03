@@ -141,14 +141,17 @@
 }
 
 @media only screen and (max-width:900px){
+  .left-container{
+    display: none;
+  }
   .container{
-    flex-direction: column;
-    height: 100%;
+    flex-direction: column !important;
+    height: 100% !important;
   }
   
   .right-container{
-    height: 100vh;
-    width: 100%;
+    height: 100vh !important;
+    width: 100% !important;
   }
  
 }
