@@ -2,6 +2,7 @@
     display: flex;
    // flex-direction: row;
    align-items: center;
+   background-color: #eeeeee;
 }
 
 .home-nav-bar-logo{
@@ -17,6 +18,7 @@
 
 .home-btn{
     margin: 10px;
+    margin-bottom: 0px;
     border: none;
     color:rgb(38, 75, 115);
     height: 30px;

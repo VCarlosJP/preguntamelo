@@ -1,6 +1,12 @@
 import React from 'react';
 import HomeCategories from './HomeCategories';
 import "./styles/HomeBody.scss";
+import quimica from "../assets/icons/quimica.png";
+import biologia from "../assets/icons/biologia.png";
+import musica from "../assets/icons/notas-musicales.png";
+import ciencia from "../assets/icons/tubo-de-ensayo.png";
+import informatica from "../assets/icons/chip.png";
+import arquitectura from "../assets/icons/medida.png";
 
 export default class HomeBody extends React.Component{
     constructor(props){
@@ -62,27 +68,30 @@ export default class HomeBody extends React.Component{
             {"id":3,"pregunta":"pregunta 3"}
         ];
         const categoriasMock = [
-            {"id":1,"nombre":"Arquitectura","img":"https://thumbs.dreamstime.com/b/logotipo-de-la-arquitectura-87171087.jpg"},
-            {"id":2,"nombre":"Fisica","img":"https://w7.pngwing.com/pngs/694/678/png-transparent-computer-icons-atom-physics-science-science-logo-atom-symbol.png"},
-            {"id":3,"nombre":"Informatica","img":"https://image.freepik.com/vector-gratis/icono-www_23-2147934922.jpg"},
-            {"id":4,"nombre":"Musica","img":"https://png.pngtree.com/png-clipart/20190520/original/pngtree-headphone-music-logo-and-icon-design-template-png-image_3555906.jpg"},
-            {"id":4,"nombre":"Musica","img":"https://png.pngtree.com/png-clipart/20190520/original/pngtree-headphone-music-logo-and-icon-design-template-png-image_3555906.jpg"}
+            {"id":1,"nombre":"Arquitectura","img":arquitectura},
+            {"id":2,"nombre":"Ciencia","img":ciencia},
+            {"id":3,"nombre":"Informatica","img":informatica},
+            {"id":4,"nombre":"Biologia","img":biologia},
+            {"id":4,"nombre":"Musica","img":musica},
+            {"id":5,"nombre":"Quimica","img":quimica}
 
         ];
         return (
             <div className="home-body">
-                <div>
-                    <p>Bienvenido/a a preguntamelo!</p>
+                <div style={{padding:"5%"}}>
+                    <div>
+                        <p>Bienvenido/a a preguntamelo!</p>
+                    </div>
+                    <div>
+                        <p>El sitio donde puedes resolver tus dudas, con respuestas de los expertetos
+                            mas capacitados del area.
+                        </p>
+                    </div>
+                    <div>
+                        <p>Hecha un vistazo a las ultimas preguntas realizadas.</p>
+                    </div>
                 </div>
-                <div>
-                    <p>El sitio donde puedes resolver tus dudas, con respuestas de los expertetos
-                        mas capacitados del area.
-                    </p>
-                </div>
-                <div>
-                    <p>Hecha un vistazo a las ultimas preguntas realizadas.</p>
-                </div>
-                <hr style={{width:"100%"}}/>
+                <hr style={{width:"100%",color:"#FD6F4F"}}/>
 
                 <div className="ultimas-preguntas">
                     {
@@ -91,7 +100,7 @@ export default class HomeBody extends React.Component{
                         })
                     }
                 </div>
-                <hr style={{width:"100%"}}/>
+                <hr style={{width:"100%",color:"#FD6F4F"}}/>
                 <div className="nuestras-categorias">
                     {/*
                         <p>Nuestras categorias</p>

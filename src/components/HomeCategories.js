@@ -17,7 +17,7 @@ export default class HomeCategories extends React.Component{
                         <Col 
                             xs={{span:6}} sm={{span:4}} md={{span:3}}
                             lg={{span:3}} xl={{span:1}}
-                        ><img alt={elem.nombre} src={elem.img} width="100%"></img>
+                        ><img alt={elem.nombre} src={elem.img} width="30%"></img>
                         </Col>
                     )}
                 </Row>
