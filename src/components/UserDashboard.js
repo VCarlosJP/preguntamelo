@@ -1,6 +1,7 @@
 import React from "react";
 
 import "./styles/UserDashboard.scss";
+import {questions} from "../stubs/fakeData.js"
 
 // export default class UserDashboard extends React.Component {
 class UserDashboard extends React.Component {
@@ -26,11 +27,13 @@ class UserDashboard extends React.Component {
   };
 
   getQuestions = (entity, stateProperty) => {
-    fetch(`http://localhost:3000/${entity}`)
-      .then((response) => response.json())
-      .then((data) => this.setState({ [stateProperty]: data }))
-      .catch((err) => console.log("Couldn´t resolve"));
-  };
+    this.setState({ [stateProperty]: questions });
+  }
+  //   fetch(`http://localhost:3000/${entity}`)
+  //     .then((response) => response.json())
+  //     .then((data) => this.setState({ [stateProperty]: data }))
+  //     .catch((err) => console.log("Couldn´t resolve"));
+  // };
 
   renderQuestions = (questions) => {
     if (questions.length == 0) return <a>Nothing to show here...</a>;
