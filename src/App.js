@@ -13,8 +13,8 @@ function App() {
   return (
     <Router>
       <Switch>
-        <Route path="/" exact component={Home}></Route>
-        <Route path="/login" component={Login}></Route>
+        {/* <Route path="/" exact component={Home}></Route>
+        <Route path="/login" component={Login}></Route> */}
         <Route path="/signup" component={SignUp}></Route>
         <Route path="/dashboard" component={UserDashboard}></Route>
       </Switch>
